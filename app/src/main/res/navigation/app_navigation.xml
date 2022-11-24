@@ -3,16 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/cadastroFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/cadastroFragment"
-        android:name="br.edu.infnet.myapplication.login.ui.CadastroFragment"
+        android:name="br.edu.infnet.myapplication.ui.login.CadastroFragment"
         android:label="fragment_cadastro"
-        tools:layout="@layout/fragment_cadastro" />
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_cadastroFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="br.edu.infnet.myapplication.login.ui.LoginFragment"
+        android:name="br.edu.infnet.myapplication.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_cadastroFragment"
+            app:destination="@id/cadastroFragment" />
+    </fragment>
 </navigation>

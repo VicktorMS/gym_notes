@@ -1,22 +1,21 @@
-package br.edu.infnet.myapplication.login.ui
+package br.edu.infnet.myapplication.ui.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.edu.infnet.myapplication.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
-    override fun onCreate(savedInstanceState: Bundle) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
-        setup()
         setContentView(view)
     }
 
-    private fun setup() {
-        TODO("Not yet implemented")
-    }
+
+
+
 }
