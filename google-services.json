@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "498130524536",
+    "project_id": "gym-notes-aa7c7",
+    "storage_bucket": "gym-notes-aa7c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498130524536:android:b60f18a1b17365157cd08d",
+        "android_client_info": {
+          "package_name": "br.edu.infnet.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498130524536-j11t7n4uvkidhp0elluh1qeavtr2c4qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUV_n084WEFEfmhvcz83n3ZuFRbkPmkuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498130524536-j11t7n4uvkidhp0elluh1qeavtr2c4qk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

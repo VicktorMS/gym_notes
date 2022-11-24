@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
