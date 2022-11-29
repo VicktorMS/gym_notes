@@ -1,14 +1,26 @@
 package br.edu.infnet.myapplication.data.repository
 
+import br.edu.infnet.myapplication.data.models.Serie
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class GymRepositoy private constructor(){
     companion object {
         lateinit var auth: FirebaseAuth
+
+        lateinit var db: FirebaseFirestore
+
+        lateinit var colecaoSeries: CollectionReference
+
+        lateinit var colecaoExercicios: CollectionReference
 
         private var INSTANCE: GymRepositoy? = null
         fun initialize() {
@@ -17,6 +29,10 @@ class GymRepositoy private constructor(){
                 INSTANCE = GymRepositoy()
             }
             auth = Firebase.auth
+            db = Firebase.firestore
+
+            colecaoSeries = db.collection("series")
+            colecaoExercicios = db.collection("exercicios")
 
         }
         fun get(): GymRepositoy {
@@ -54,6 +70,32 @@ class GymRepositoy private constructor(){
 
     fun logout() {
         auth.signOut()
+    }
+
+    // FireStore /////////////////////////////////////////////////////////////////
+
+
+    //Series
+    fun cadastrarSerie(serie: Serie): Task<DocumentReference>{
+        return colecaoSeries.add(serie)
+    }
+
+    fun getSeries(): Task<QuerySnapshot>{
+        return colecaoSeries.get()
+    }
+
+    fun getSeriesColecao(): CollectionReference{
+        return colecaoSeries
+    }
+
+    fun deleteSerie(id: String){
+        colecaoSeries.document(id).delete()
+    }
+
+    fun atualizarSerie(id: String?, serie: Serie){
+        if (id != null){
+            colecaoSeries.document(id).set(serie)
+        }
     }
 
 }
