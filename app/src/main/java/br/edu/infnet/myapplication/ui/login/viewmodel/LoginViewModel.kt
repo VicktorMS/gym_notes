@@ -1,4 +1,4 @@
-package br.edu.infnet.myapplication.ui.login
+package br.edu.infnet.myapplication.ui.login.viewmodel
 
 import androidx.lifecycle.ViewModel
 import br.edu.infnet.myapplication.data.repository.GymRepositoy
@@ -10,17 +10,17 @@ class LoginViewModel: ViewModel() {
     val TAG = "ViewModel"
     val repository = GymRepositoy
 
-    val repositoryGet = repository.get()
+    val repositoryGet = GymRepositoy.get()
 
     fun isLoggedIn(): Boolean {
         return repositoryGet.isLoggedIn()
     }
 
     fun login(email: String, password: String): Task<AuthResult> {
-        return repository.auth.signInWithEmailAndPassword(email, password)
+        return GymRepositoy.auth.signInWithEmailAndPassword(email, password)
     }
 
     fun signOn(email: String, password: String): Task<AuthResult> {
-        return repositoryGet.cadastrarUsuarioComSenha(email, password)
+        return repositoryGet.createUsuarioComSenha(email, password)
     }
 }

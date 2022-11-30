@@ -53,8 +53,7 @@ class GymRepositoy private constructor(){
         return false
     }
 
-    // Faça o mesmo que foi feito com o Login
-    fun cadastrarUsuarioComSenha(
+    fun createUsuarioComSenha(
         email: String,
         password: String
     ): Task<AuthResult> {
@@ -75,8 +74,9 @@ class GymRepositoy private constructor(){
     // FireStore /////////////////////////////////////////////////////////////////
 
 
+
     //Series
-    fun cadastrarSerie(serie: Serie): Task<DocumentReference>{
+    fun createSerie(serie: Serie): Task<DocumentReference>{
         return colecaoSeries.add(serie)
     }
 
@@ -88,14 +88,16 @@ class GymRepositoy private constructor(){
         return colecaoSeries
     }
 
-    fun deleteSerie(id: String){
-        colecaoSeries.document(id).delete()
-    }
-
-    fun atualizarSerie(id: String?, serie: Serie){
+    fun updateSerie(id: String?, serie: Serie){
         if (id != null){
             colecaoSeries.document(id).set(serie)
         }
     }
+
+    fun deleteSerie(id: String){
+        colecaoSeries.document(id).delete()
+    }
+    //////////////////////////////////////////////////
+
 
 }

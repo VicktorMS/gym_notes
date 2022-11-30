@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.databinding.FragmentCadastrarSerieBinding
+import br.edu.infnet.myapplication.utils.nav
 
 
 class CadastrarSerieFragment : Fragment() {
@@ -21,6 +22,19 @@ class CadastrarSerieFragment : Fragment() {
         _binding = FragmentCadastrarSerieBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setOnClickListeners()
+    }
+
+    private fun setOnClickListeners() {
+        binding.apply {
+            buttonCreateSerie.setOnClickListener {
+                nav(R.id.action_cadastrarSerieFragment_to_homeFragment)
+            }
+        }
     }
 
     override fun onDestroyView() {

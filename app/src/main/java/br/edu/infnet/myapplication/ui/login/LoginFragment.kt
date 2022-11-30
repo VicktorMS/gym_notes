@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.databinding.FragmentLoginBinding
 import br.edu.infnet.myapplication.ui.home.HomeActivity
+import br.edu.infnet.myapplication.ui.login.viewmodel.LoginViewModel
 
 class LoginFragment : Fragment() {
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.databinding.FragmentCadastroBinding
+import br.edu.infnet.myapplication.ui.login.viewmodel.LoginViewModel
 
 
 class CadastroFragment : Fragment() {

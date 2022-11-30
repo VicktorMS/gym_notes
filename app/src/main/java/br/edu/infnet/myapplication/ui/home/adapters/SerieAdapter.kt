@@ -1,3 +1,4 @@
+/*
 package br.edu.infnet.myapplication.ui.home.adapter
 
 import android.view.LayoutInflater
@@ -74,3 +75,4 @@ interface SerieListener {
 }
 
 
+*/

@@ -1,3 +1,4 @@
+/*
 package br.edu.infnet.myapplication.ui.home.adapters
 
 
@@ -72,4 +73,4 @@ class SerieComIdDiffCallback : DiffUtil.ItemCallback<Serie>() {
 interface SerieComIdListener {
     fun onEditClick(serie: Serie)
     fun onDeleteClick(serie: Serie)
-}
+}*/
