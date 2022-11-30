@@ -11,4 +11,23 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="cadastre_uma_nova_s_rie_de_exercicios">Cadastre uma nova série de exercicios</string>
+    <string name="nomeie_sua_s_rie_de_exercicios">Nomeie sua série de exercicios</string>
+    <string name="ex_treino_de_peito">ex: Treino de Peito</string>
+    <string name="dias_em_que_realizar_a_s_rie">Dias em que realizará a série:</string>
+    <string name="recomendado_treinar_s_ries_com_intervalos_de_dias">É recomendado treinar séries com intervalos de dias.</string>
+    <string name="criar_nova_s_rie">Criar nova série</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="confirme_password">Confirme Password</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="gym_notes">GYM NOTES</string>
+    <string name="login">Login</string>
+    <string name="seg">Seg</string>
+    <string name="ter">Ter</string>
+    <string name="qua">Qua</string>
+    <string name="qui">Qui</string>
+    <string name="sex">Sex</string>
+    <string name="sab">Sab</string>
+    <string name="dom">Dom</string>
 </resources>
