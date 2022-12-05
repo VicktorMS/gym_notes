@@ -1,4 +1,4 @@
-package br.edu.infnet.myapplication.ui.home.viewModel
+package br.edu.infnet.myapplication.ui.home.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -12,9 +12,9 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.ktx.toObject
 
-class HomeViewModel: ViewModel() {
+class HomeSerieViewModel: ViewModel() {
 
-    val TAG = "ViewModel"
+    val TAG = "HomeSerieViewModel"
     val repository = GymRepositoy.get()
 
     fun logout() {

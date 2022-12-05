@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import br.edu.infnet.myapplication.R
-import br.edu.infnet.myapplication.ui.home.viewModel.HomeViewModel
+import br.edu.infnet.myapplication.ui.home.viewmodel.HomeSerieViewModel
 import br.edu.infnet.myapplication.databinding.FragmentHomeBinding
 import br.edu.infnet.myapplication.utils.nav
 
 class HomeFragment : Fragment() {
 
-    val viewModel: HomeViewModel by activityViewModels()
+    val viewModel: HomeSerieViewModel by activityViewModels()
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
