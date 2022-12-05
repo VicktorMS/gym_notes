@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.edu.infnet.myapplication.R
+import br.edu.infnet.myapplication.data.models.Serie
 import br.edu.infnet.myapplication.databinding.FragmentCadastrarSerieBinding
+import br.edu.infnet.myapplication.utils.getTextInput
 import br.edu.infnet.myapplication.utils.nav
 
 
@@ -34,6 +36,15 @@ class CadastrarSerieFragment : Fragment() {
             buttonCreateSerie.setOnClickListener {
                 nav(R.id.action_cadastrarSerieFragment_to_homeFragment)
             }
+        }
+    }
+
+    fun getSerieFromInputs(): Serie {
+        binding.apply {
+            return Serie(
+                nomeSerie = getTextInput(editTextNomeSerie),
+
+            )
         }
     }
 

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_cadastrarSerieFragment"
             app:destination="@id/cadastrarSerieFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_serieFragment"
+            app:destination="@id/serieFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastrarSerieFragment"
@@ -22,5 +25,23 @@
         <action
             android:id="@+id/action_cadastrarSerieFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serieFragment"
+        android:name="br.edu.infnet.myapplication.ui.home.SerieFragment"
+        android:label="fragment_serie"
+        tools:layout="@layout/fragment_serie" >
+        <action
+            android:id="@+id/action_serieFragment_to_cadastrarExercicioFragment"
+            app:destination="@id/cadastrarExercicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastrarExercicioFragment"
+        android:name="br.edu.infnet.myapplication.ui.home.CadastrarExercicioFragment"
+        android:label="fragment_cadastrar_exercicio"
+        tools:layout="@layout/fragment_cadastrar_exercicio" >
+        <action
+            android:id="@+id/action_cadastrarExercicioFragment_to_serieFragment"
+            app:destination="@id/serieFragment" />
     </fragment>
 </navigation>

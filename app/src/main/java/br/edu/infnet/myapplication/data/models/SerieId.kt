@@ -1,6 +1,6 @@
 package br.edu.infnet.myapplication.data.models
 
-data class SerieComId(
+data class SerieId(
     val id: String =  "",
     val dia: String = "",
     val nome: String = ""
