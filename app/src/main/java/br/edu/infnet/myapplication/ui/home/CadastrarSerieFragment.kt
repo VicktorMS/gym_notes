@@ -11,7 +11,6 @@ import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.data.models.Serie
 import br.edu.infnet.myapplication.databinding.FragmentCadastrarSerieBinding
 import br.edu.infnet.myapplication.ui.home.viewmodel.HomeSerieViewModel
-import br.edu.infnet.myapplication.utils.getTextInput
 import br.edu.infnet.myapplication.utils.nav
 
 
@@ -58,35 +57,35 @@ class CadastrarSerieFragment : Fragment() {
             }
     }
 
-    fun getDiaSeriefromInputs(): String{
-        var dias = ""
+    fun getDiaSeriefromInputs():String{
+        var diasLista: MutableList<String> = mutableListOf()
         binding.apply {
-            if (radioButtonSeg.isChecked){
-                dias + "Seg, "
+            if (checkBoxSeg.isChecked){
+                diasLista.add("Seg")
             }
-            if (radioButtonTer.isChecked){
-                dias + "Ter, "
+            if (checkBoxTer.isChecked){
+                diasLista.add("Ter")
             }
-            if (radioButtonQua.isChecked){
-                dias + "Qua, "
+            if (checkBoxQua.isChecked){
+                diasLista.add("Qua")
             }
-            if (radioButtonQui.isChecked){
-                dias + "Qui, "
+            if (checkBoxQui.isChecked){
+                diasLista.add("Qui")
             }
-            if (radioButtonSex.isChecked){
-                dias + "Sex, "
+            if (checkBoxSex.isChecked){
+                diasLista.add("Sex")
             }
-            if (radioButtonSab.isChecked){
-                dias + "Sab, "
+            if (checkBoxSab.isChecked){
+                diasLista.add("Sab")
             }
-            if (radioButtonDom.isChecked){
-                dias + "Dom, "
+            if (checkBoxDom.isChecked){
+                diasLista.add("Dom")
             }
         }
-
-        //TODO: Trocar Botões radio button para checkbox, com radio button só dá pra marcar um
-        return dias
+        val string = diasLista.joinToString(prefix = "", postfix = "", separator = ", ")
+        return string
     }
+
 
     fun getSerieFromInputs(): Serie {
         binding.apply {

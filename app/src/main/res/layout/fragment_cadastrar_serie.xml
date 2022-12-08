@@ -63,8 +63,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomeSerie" />
 
-    <RadioGroup
-        android:id="@+id/radioGroupDiasSemana"
+    <LinearLayout
+        android:id="@+id/lineaLayoutGroupDiasSemana1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -73,57 +73,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitulo2">
 
-        <RadioButton
-            android:id="@+id/radioButtonSeg"
+        <CheckBox
+            android:id="@+id/checkBoxSeg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/seg" />
 
-        <RadioButton
-            android:id="@+id/radioButtonTer"
+        <CheckBox
+            android:id="@+id/checkBoxTer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ter" />
 
-        <RadioButton
-            android:id="@+id/radioButtonQua"
+        <CheckBox
+            android:id="@+id/checkBoxQua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/qua" />
 
-        <RadioButton
-            android:id="@+id/radioButtonQui"
+        <CheckBox
+            android:id="@+id/checkBoxQui"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/qui" />
 
-        <RadioButton
-            android:id="@+id/radioButtonSex"
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lineaLayoutGroupDiasSemana2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineaLayoutGroupDiasSemana1">
+
+        <CheckBox
+            android:id="@+id/checkBoxSex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sex" />
 
-        <RadioButton
-            android:id="@+id/radioButtonSab"
+        <CheckBox
+            android:id="@+id/checkBoxSab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sab" />
 
-        <RadioButton
-            android:id="@+id/radioButtonDom"
+        <CheckBox
+            android:id="@+id/checkBoxDom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dom" />
-    </RadioGroup>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/recomendado_treinar_s_ries_com_intervalos_de_dias"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupDiasSemana"/>
+        app:layout_constraintTop_toBottomOf="@+id/lineaLayoutGroupDiasSemana2" />
 
     <Button
         android:id="@+id/buttonCreateSerie"

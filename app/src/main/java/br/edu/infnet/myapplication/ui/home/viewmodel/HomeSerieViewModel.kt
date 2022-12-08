@@ -146,7 +146,7 @@ class HomeSerieViewModel: ViewModel() {
     }
 
 
-   /* private val _series = MutableLiveData<List<Serie>>()
+    /*private val _series = MutableLiveData<List<Serie>>()
     val series: LiveData<List<Serie>> = _series
     fun setSeries(value: List<Serie>) {
         _series.postValue(value)

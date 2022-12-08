@@ -1,4 +1,3 @@
-/*
 package br.edu.infnet.myapplication.ui.home.adapters
 
 
@@ -37,13 +36,13 @@ class SerieComIdAdapter(val listener: SerieComIdListener) :
                 serieNome.text = item.nomeSerie
                 serieDia.text = item.diaSerie
 
-                ivEdit.setOnClickListener {
+                /*ivEdit.setOnClickListener {
                     listener.onEditClick(item)
                 }
                 ivDelete.setOnClickListener {
                     listener.onDeleteClick(item)
                 }
-
+*/
             }
         }
 
@@ -73,4 +72,4 @@ class SerieComIdDiffCallback : DiffUtil.ItemCallback<Serie>() {
 interface SerieComIdListener {
     fun onEditClick(serie: Serie)
     fun onDeleteClick(serie: Serie)
-}*/
+}

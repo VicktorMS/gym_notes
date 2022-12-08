@@ -12,7 +12,7 @@ import br.edu.infnet.myapplication.databinding.ActivityMainBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    /*private lateinit var appBarConfiguration: AppBarConfiguration*/
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,3 +24,11 @@ class HomeActivity : AppCompatActivity() {
 
 
 }
+
+
+//TODO: ViewModel exercicio
+// Adapter de Série
+// Layout de cadastro de usuário - API
+// API
+// Crud Exercicios
+// Edit Delete
