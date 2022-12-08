@@ -22,6 +22,5 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    //TODO: Ajustar bordas de margem do fragmentContainer
-    //TODO: Retirar a ActionBar
+
 }
