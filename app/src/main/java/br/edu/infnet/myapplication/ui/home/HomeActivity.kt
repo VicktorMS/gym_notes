@@ -27,8 +27,8 @@ class HomeActivity : AppCompatActivity() {
 
 
 //TODO: ViewModel exercicio
-// Adapter de Série
-// Layout de cadastro de usuário - API
-// API
-// Crud Exercicios
-// Edit Delete
+//TODO: Adapter de Série
+//TODO: Layout de cadastro de usuário - API
+//TODO: API
+//TODO: Crud Exercicios
+//TODO: Edit Delete

@@ -1,10 +1,16 @@
 package br.edu.infnet.myapplication.ui.login
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.infnet.myapplication.databinding.ActivityLoginBinding
+import br.edu.infnet.myapplication.ui.home.HomeActivity
+import br.edu.infnet.myapplication.ui.login.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
+
+    val viewModel by viewModels<LoginViewModel>()
 
     private lateinit var binding: ActivityLoginBinding
 
@@ -16,6 +22,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
+
+    override fun onStart() {
+        super.onStart()
+        if(viewModel.isLoggedIn()){
+            startMainActivity()
+        }
+    }
+
+    fun startMainActivity(){
+        startActivity(Intent(this, HomeActivity::class.java))
+        finish()
+    }
 
 
 }
