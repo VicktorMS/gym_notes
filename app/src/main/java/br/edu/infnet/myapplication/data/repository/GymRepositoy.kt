@@ -1,5 +1,8 @@
 package br.edu.infnet.myapplication.data.repository
 
+import br.edu.infnet.myapplication.data.models.Exercicio
+import br.edu.infnet.myapplication.data.models.ExercicioId
+import br.edu.infnet.myapplication.data.models.ExercicioInSerie
 import br.edu.infnet.myapplication.data.models.Serie
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -18,9 +21,9 @@ class GymRepositoy private constructor(){
 
         lateinit var db: FirebaseFirestore
 
-        lateinit var colecaoSeries: CollectionReference
+        lateinit var seriesCollection: CollectionReference
 
-        lateinit var colecaoExercicios: CollectionReference
+        lateinit var exerciciosCollection: CollectionReference
 
         private var INSTANCE: GymRepositoy? = null
         fun initialize() {
@@ -31,8 +34,8 @@ class GymRepositoy private constructor(){
             auth = Firebase.auth
             db = Firebase.firestore
 
-            colecaoSeries = db.collection("series")
-            colecaoExercicios = db.collection("exercicios")
+            seriesCollection = db.collection("series")
+            exerciciosCollection = db.collection("exercicios")
 
         }
         fun get(): GymRepositoy {
@@ -77,27 +80,59 @@ class GymRepositoy private constructor(){
 
     //Series
     fun createSerie(serie: Serie): Task<DocumentReference>{
-        return colecaoSeries.add(serie)
+        return seriesCollection.add(serie)
     }
 
     fun getSeries(): Task<QuerySnapshot>{
-        return colecaoSeries.get()
+        return seriesCollection.get()
     }
 
     fun getSeriesColecao(): CollectionReference{
-        return colecaoSeries
+        return seriesCollection
     }
 
     fun updateSerie(id: String?, serie: Serie){
         if (id != null){
-            colecaoSeries.document(id).set(serie)
+            seriesCollection.document(id).set(serie)
         }
     }
 
     fun deleteSerie(id: String){
-        colecaoSeries.document(id).delete()
+        seriesCollection.document(id).delete()
     }
     //////////////////////////////////////////////////
+
+
+
+
+
+    fun getExerciciosCollection(): CollectionReference {
+        return exerciciosCollection
+    }
+
+    fun createExercicio(exercicio: Exercicio): Task<DocumentReference> {
+        return exerciciosCollection.add(exercicio)
+    }
+
+    fun deleteExercicio(id: String): Task<Void> {
+        return exerciciosCollection.document(id).delete()
+    }
+
+    fun updateExercicio(id: String?, exercicio: Exercicio) {
+        if (id != null) {
+            exerciciosCollection.document(id).set(exercicio)
+        }
+    }
+
+    fun addExercicioInSerie(idSerie: String, exercicioId: ExercicioId){
+        val exercicioInSerie = ExercicioInSerie(
+            exercicioNome = exercicioId.nome)
+        seriesCollection
+            .document(idSerie)
+            .collection("exercicios")
+            .document(exercicioId.id)
+            .set(exercicioInSerie)
+    }
 
 
 }
