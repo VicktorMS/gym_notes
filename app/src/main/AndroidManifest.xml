@@ -33,7 +33,7 @@
 
             <meta-data
                 android:name="android.app.lib_name"
-                android:value="" />
+                android:value="ca-app-pub-3940256099942544~3347511713" />
         </activity>
     </application>
 
