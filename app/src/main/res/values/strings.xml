@@ -30,4 +30,6 @@
     <string name="sex">Sex</string>
     <string name="sab">Sab</string>
     <string name="dom">Dom</string>
+    <string name="dia_da_serie">Dia Da Serie</string>
+    <string name="nome_da_serie">Nome da Serie</string>
 </resources>
