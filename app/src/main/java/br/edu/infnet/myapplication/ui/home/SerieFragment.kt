@@ -30,7 +30,6 @@ class SerieFragment : Fragment() {
     }
 
     private fun setup() {
-
         setupObservers()
         setupClickListeners()
     }
@@ -53,9 +52,6 @@ class SerieFragment : Fragment() {
                 textViewDiasTreino.setText("Dias de treino: "+ it.dia)
             }
         }
-    }
-
-    private fun setupViews() {
     }
 
 
