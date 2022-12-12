@@ -1,17 +1,16 @@
 package br.edu.infnet.myapplication.ui.home
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.databinding.ActivityMainBinding
+import br.edu.infnet.myapplication.ui.home.viewmodel.HomeSerieViewModel
+import br.edu.infnet.myapplication.ui.login.LoginActivity
 
 class HomeActivity : AppCompatActivity() {
 
+    val viewModel by viewModels<HomeSerieViewModel>()
     /*private lateinit var appBarConfiguration: AppBarConfiguration*/
     private lateinit var binding: ActivityMainBinding
 
@@ -20,13 +19,22 @@ class HomeActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        logoutOnClick()
+    }
+
+    private fun logoutOnClick() {
+        binding.imageButtonLogout.setOnClickListener {
+            viewModel.logout()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
     }
 
 
 }
 
 
-//TODO: ViewModel exercicio
+
 //TODO: Adapter de Série
 //TODO: Layout de cadastro de usuário - API
 //TODO: API

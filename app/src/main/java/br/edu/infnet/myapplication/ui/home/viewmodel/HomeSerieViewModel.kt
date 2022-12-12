@@ -255,7 +255,9 @@ class HomeSerieViewModel: ViewModel() {
                             Log.i(TAG, "exercicioId: ${exercicioId}")
 
                             //Colocar a função aqui, quando criar o exercio cria dentro da série
-                            addExercicioInSerie(exercicioId)
+                            if(selectedSerieId.value != null){
+                                addExercicioInSerie(exercicioId)
+                            }
 
                             inputList.add(exercicioId)
 
@@ -363,7 +365,6 @@ class HomeSerieViewModel: ViewModel() {
         return repository.createExercicio(exercicio)
     }
 
-
     fun updateExercicio(exercicio: Exercicio) {
         repository.updateExercicio(selectedExercicioId.value?.id, exercicio)
     }
@@ -374,7 +375,7 @@ class HomeSerieViewModel: ViewModel() {
 
     //TODO: Encontrar uma forma de adicionar o Exercicio a série assim que for criado
     //TODO: Encontrar uma forma de se comunicar com outra viewmodel, para pegar o Id da série atual
-    //
+
     fun addExercicioInSerie(exercicioId: ExercicioId){
         repository.addExercicioInSerieId(selectedSerieId.value?.id!!, exercicioId)
     }
