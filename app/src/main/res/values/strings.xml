@@ -35,4 +35,6 @@
     <string name="edite_sua_s_rie_de_exercicios">Edite sua Série de Exercicios</string>
     <string name="edite_a_serie">Edite a série</string>
     <string name="bot_o_de_excluir_serie">Botão de Excluir serie</string>
+    <string name="logout_button">Logout Button</string>
+    <string name="logout">Logout</string>
 </resources>
