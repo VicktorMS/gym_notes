@@ -143,12 +143,10 @@
         android:id="@+id/buttonCreateSerie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
+        android:layout_marginTop="96dp"
         android:text="@string/criar_nova_s_rie"
         app:icon="@drawable/ic_baseline_add_24"
-        android:layout_marginTop="18dp"
-        app:layout_constraintTop_toBottomOf="@id/textViewTip"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTip" />
 </androidx.constraintlayout.widget.ConstraintLayout>

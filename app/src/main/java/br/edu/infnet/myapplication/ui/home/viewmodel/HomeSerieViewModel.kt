@@ -179,7 +179,7 @@ class HomeSerieViewModel: ViewModel() {
         repository.updateSerie(selectedSerieId.value?.id, serie)
     }
 
-    fun deleteTurma(id: String) {
+    fun deleteSerie(id: String) {
         repository.deleteSerie(id)
     }
 
