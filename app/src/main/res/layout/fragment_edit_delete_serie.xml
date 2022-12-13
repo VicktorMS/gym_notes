@@ -7,7 +7,7 @@
     tools:context=".ui.home.EditDeleteSerieFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewDeleteSerie"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTitulo"
+        android:id="@+id/TextviewEditDeleteTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewTituloNomeSerie"
+        android:id="@+id/TextviewEditDeleteTituloNomeSerie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -41,10 +41,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/TextviewEditDeleteTitulo" />
 
     <EditText
-        android:id="@+id/editTextNomeSerie"
+        android:id="@+id/editTextEditDeleteNomeSerie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -57,11 +57,11 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTituloNomeSerie"
+        app:layout_constraintTop_toBottomOf="@+id/TextviewEditDeleteTituloNomeSerie"
         android:importantForAutofill="no" />
 
     <TextView
-        android:id="@+id/textViewTitulo2"
+        android:id="@+id/TextviewEditDeleteTitulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
@@ -70,38 +70,38 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomeSerie" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditDeleteNomeSerie" />
 
     <LinearLayout
-        android:id="@+id/lineaLayoutGroupDiasSemana1"
+        android:id="@+id/lineaLayoutEditDeleteGroupDiasSemana1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo2">
+        app:layout_constraintTop_toBottomOf="@+id/TextviewEditDeleteTitulo2">
 
         <CheckBox
-            android:id="@+id/checkBoxSeg"
+            android:id="@+id/checkBoxEditDeleteSeg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/seg" />
 
         <CheckBox
-            android:id="@+id/checkBoxTer"
+            android:id="@+id/checkBoxEditDeleteTer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ter" />
 
         <CheckBox
-            android:id="@+id/checkBoxQua"
+            android:id="@+id/checkBoxEditDeleteQua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/qua" />
 
         <CheckBox
-            android:id="@+id/checkBoxQui"
+            android:id="@+id/checkBoxEditDeleteQui"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/qui" />
@@ -111,45 +111,45 @@
 
 
     <LinearLayout
-        android:id="@+id/lineaLayoutGroupDiasSemana2"
+        android:id="@+id/lineaLayoutEditDeleteGroupDiasSemana2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineaLayoutGroupDiasSemana1"
+        app:layout_constraintTop_toBottomOf="@+id/lineaLayoutEditDeleteGroupDiasSemana1"
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/checkBoxSex"
+            android:id="@+id/checkBoxEditDeleteSex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sex" />
 
         <CheckBox
-            android:id="@+id/checkBoxSab"
+            android:id="@+id/checkBoxEditDeleteSab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sab" />
 
         <CheckBox
-            android:id="@+id/checkBoxDom"
+            android:id="@+id/checkBoxEditDeleteDom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dom" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textViewTip"
+        android:id="@+id/TextviewEditDeleteTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/recomendado_treinar_s_ries_com_intervalos_de_dias"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineaLayoutGroupDiasSemana2" />
+        app:layout_constraintTop_toBottomOf="@+id/lineaLayoutEditDeleteGroupDiasSemana2" />
 
     <Button
-        android:id="@+id/buttonCreateSerie"
+        android:id="@+id/buttonEditDeleteSerie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
