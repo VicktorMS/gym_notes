@@ -1,3 +1,4 @@
+/*
 package br.edu.infnet.myapplication.ui.home.viewmodel
 
 import android.util.Log
@@ -68,6 +69,10 @@ class ExerciciosViewModel: ViewModel() {
                             val exercicioId = exercicioToExercicioId(exercicio, id)
 
                             Log.i(TAG, "exercicioId: ${exercicioId}")
+
+                            //Colocar a função aqui, quando criar o exercio cria dentro da série
+                            addExercicioInSerie(exercicioId)
+
                             inputList.add(exercicioId)
 
                         }
@@ -105,7 +110,7 @@ class ExerciciosViewModel: ViewModel() {
             nome = exercicio.nome,
             peso = exercicio.peso,
             repExercicio = exercicio.repExercicio,
-            repMove = exercicio.repMove,
+            repMove = exercicio.repMov,
             aparelho = exercicio.aparelho,
 
             id=id
@@ -175,7 +180,7 @@ class ExerciciosViewModel: ViewModel() {
     }
 
 
-    fun atualizaExercicio(exercicio: Exercicio) {
+    fun updateExercicio(exercicio: Exercicio) {
         repository.updateExercicio(selectedExercicioId.value?.id, exercicio)
     }
 
@@ -183,12 +188,22 @@ class ExerciciosViewModel: ViewModel() {
         return repository.deleteExercicio(exercicioId.id)
     }
 
+    //TODO: Encontrar uma forma de adicionar o Exercicio a série assim que for criado
+    //TODO: Encontrar uma forma de se comunicar com outra viewmodel, para pegar o Id da série atual
+    //
     fun addExercicioInSerie(exercicioId: ExercicioId){
-        repository.addExercicioInSerie(
-            selectedExercicioId.value?.id!!,
-            exercicioId
+        repository.addExercicioInSerieId(getSelectedSerieId().value?.id!!, exercicioId
         )
     }
 
+    fun getSelectedSerieId(){
 
-}
+    }
+
+
+    init {
+        observeExerciciosCollection()
+    }
+
+
+}*/

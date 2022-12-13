@@ -19,10 +19,10 @@
         app:layout_constraintEnd_toStartOf="@+id/textViewTituloNomeSerie4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomeSerie3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomePesoExercicio" />
 
     <EditText
-        android:id="@+id/editTextNomeSerie5"
+        android:id="@+id/editTextNomeRepExercicio"
         android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -33,13 +33,13 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#757575"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNomeSerie4"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNomeRepMovExercicio"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTituloNomeSerie5" />
 
     <EditText
-        android:id="@+id/editTextNomeSerie4"
+        android:id="@+id/editTextNomeRepMovExercicio"
         android:layout_width="163dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -52,7 +52,7 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextNomeSerie5"
+        app:layout_constraintStart_toEndOf="@+id/editTextNomeRepExercicio"
         app:layout_constraintTop_toBottomOf="@+id/textViewTituloNomeSerie4" />
 
     <TextView
@@ -67,10 +67,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewTituloNomeSerie5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomeSerie3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomePesoExercicio" />
 
     <EditText
-        android:id="@+id/editTextNomeSerie3"
+        android:id="@+id/editTextNomePesoExercicio"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -97,7 +97,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomeSerie2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeExercicio" />
 
     <TextView
         android:id="@+id/textViewTituloNomeSerie2"
@@ -112,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewExercicioTitulo" />
 
     <EditText
-        android:id="@+id/editTextNomeSerie2"
+        android:id="@+id/editTextNomeExercicio"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

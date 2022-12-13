@@ -22,6 +22,10 @@ fun Fragment.getIntInput(editText: EditText): Int {
     return editText.text.toString().toInt()
 }
 
+fun Fragment.getFloatInput(editText: EditText): Float {
+    return editText.text.toString().toFloat()
+}
+
 fun Fragment.toast(msg: String){
     Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
 }

@@ -124,7 +124,7 @@ class GymRepositoy private constructor(){
         }
     }
 
-    fun addExercicioInSerie(idSerie: String, exercicioId: ExercicioId){
+    fun addExercicioInSerieId(idSerie: String, exercicioId: ExercicioId){
         val exercicioInSerie = ExercicioInSerie(
             exercicioNome = exercicioId.nome)
         seriesCollection
@@ -133,6 +133,9 @@ class GymRepositoy private constructor(){
             .document(exercicioId.id)
             .set(exercicioInSerie)
     }
+
+
+
 
 
 }
