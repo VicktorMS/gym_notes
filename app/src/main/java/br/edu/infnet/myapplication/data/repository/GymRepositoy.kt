@@ -135,6 +135,14 @@ class GymRepositoy private constructor(){
     }
 
 
+    fun getExerciciosInSerieId(idSerie: String): CollectionReference{
+        //val exercicioInSerie = ExercicioInSerie(exercicioNome = exercicioId.nome)
+        return seriesCollection
+            .document(idSerie)
+            .collection("exercicios")
+    }
+
+
 
 
 

@@ -42,6 +42,9 @@ class SerieFragment : Fragment() {
             imageViewEditSerie.setOnClickListener{
                 nav(R.id.action_serieFragment_to_cadastrarExercicioFragment)
             }
+            imageViewEditSerie.setOnClickListener {
+                nav(R.id.)
+            }
         }
     }
 
