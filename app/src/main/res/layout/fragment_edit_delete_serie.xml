@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_remover"
+        android:contentDescription="@string/bot_o_de_excluir_serie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +24,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
-        android:text="Edite sua Série de Exercicios"
+        android:text="@string/edite_sua_s_rie_de_exercicios"
         android:textAlignment="center"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -153,8 +154,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
-        android:text="Edite a série"
+        android:text="@string/edite_a_serie"
         app:icon="@drawable/ic_baseline_add_24"
+        app:layout_constraintTop_toBottomOf="@id/textViewTip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
