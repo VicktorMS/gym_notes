@@ -8,36 +8,17 @@
     tools:context=".ui.home.HomeActivity">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#651FFF"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/log_out_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/purple_500"
-            android:contentDescription="@string/logout"
-            android:minWidth="49dp"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/ic_baseline_logout_24" />
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"></com.google.android.gms.ads.AdView>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_main_fragment"
@@ -46,11 +27,21 @@
         android:layout_height="0dp"
         android:layout_margin="8dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/main_navigation" />
+
+    <ImageView
+        android:id="@+id/log_out_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_logout_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,6 +44,9 @@ class HomeFragment : Fragment() {
             floatingActionButtonAddSerie.setOnClickListener {
                 nav(R.id.action_homeFragment_to_cadastrarSerieFragment)
             }
+            imageViewUserInfo.setOnClickListener {
+                nav(R.id.action_homeFragment_to_userFragment)
+            }
         }
     }
 

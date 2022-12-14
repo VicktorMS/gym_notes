@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/imageViewDeleteSerie"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_baseline_delete_24"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/bot_o_de_excluir_serie"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -22,7 +22,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:text="@string/edite_sua_s_rie_de_exercicios"
         android:textAlignment="center"
@@ -30,7 +29,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDeleteSerie" />
 
     <TextView
         android:id="@+id/TextviewEditDeleteTituloNomeSerie"
@@ -155,7 +154,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/edite_a_serie"
-        app:icon="@drawable/ic_baseline_add_24"
+        app:icon="@drawable/ic_baseline_edit_24"
+        app:iconGravity="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextviewEditDeleteTip" />
