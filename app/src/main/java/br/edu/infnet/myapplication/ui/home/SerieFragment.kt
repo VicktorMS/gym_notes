@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.edu.infnet.myapplication.R
+import br.edu.infnet.myapplication.data.models.Exercicio
+import br.edu.infnet.myapplication.data.models.ExercicioId
 import br.edu.infnet.myapplication.databinding.FragmentCadastrarSerieBinding
 import br.edu.infnet.myapplication.databinding.FragmentSerieBinding
+import br.edu.infnet.myapplication.ui.home.adapters.ExercicioInSerieAdapter
+import br.edu.infnet.myapplication.ui.home.adapters.ExercicionInSerieListener
 import br.edu.infnet.myapplication.ui.home.viewmodel.HomeSerieViewModel
 import br.edu.infnet.myapplication.utils.nav
 
@@ -56,6 +61,38 @@ class SerieFragment : Fragment() {
             }
         }
     }
+
+
+
+    val adapter = ExercicioInSerieAdapter(
+        object : ExercicionInSerieListener {
+            override fun deleteOnClick(exercicio: ExercicioId) {
+                viewModel.deleteExercicio(exercicio)
+            }
+        }
+    )
+
+    private fun setupRecyclerView() {
+        // adapter precisa ser uma variável global para ser acessada por todos os métodos
+        binding.recyclerViewExerciciosSerie.adapter = adapter
+        binding.recyclerViewExerciciosSerie.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.VERTICAL,
+            false
+        )
+    }
+
+    /*private fun setupObservers() {
+        val serieId = viewModel.selectedSerieId.toString()
+        viewModel.getExerciciosInSerieId(serieId).observe(viewLifecycleOwner) {
+            atualizaRecyclerView(it)
+        }
+    }
+
+    fun atualizaRecyclerView(lista: List<ExercicioId>) {
+        adapter.submitList(lista)
+        binding.recyclerViewExerciciosSerie.adapter = adapter
+    }*/
 
 
     override fun onDestroyView() {

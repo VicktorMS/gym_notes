@@ -10,6 +10,7 @@ import br.edu.infnet.myapplication.data.models.Serie
 import br.edu.infnet.myapplication.data.models.SerieId
 import br.edu.infnet.myapplication.data.repository.GymRepositoy
 import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.ktx.toObject
@@ -378,6 +379,10 @@ class HomeSerieViewModel: ViewModel() {
 
     fun addExercicioInSerie(exercicioId: ExercicioId){
         repository.addExercicioInSerieId(selectedSerieId.value?.id!!, exercicioId)
+    }
+
+    fun getExerciciosInSerieId(idSerie: String): CollectionReference {
+       return repository.getExerciciosInSerieId(idSerie)
     }
 
     init {
