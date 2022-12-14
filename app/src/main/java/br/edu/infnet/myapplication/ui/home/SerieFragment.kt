@@ -37,6 +37,9 @@ class SerieFragment : Fragment() {
     private fun setup() {
         setupObservers()
         setupClickListeners()
+
+        setupObserversForRV()
+        setupRecyclerView()
     }
 
     private fun setupClickListeners() {
@@ -82,9 +85,9 @@ class SerieFragment : Fragment() {
         )
     }
 
-    /*private fun setupObservers() {
+    private fun setupObserversForRV() {
         val serieId = viewModel.selectedSerieId.toString()
-        viewModel.getExerciciosInSerieId(serieId).observe(viewLifecycleOwner) {
+        viewModel.exerciciosIdInSerie.observe(viewLifecycleOwner) {
             atualizaRecyclerView(it)
         }
     }
@@ -92,7 +95,7 @@ class SerieFragment : Fragment() {
     fun atualizaRecyclerView(lista: List<ExercicioId>) {
         adapter.submitList(lista)
         binding.recyclerViewExerciciosSerie.adapter = adapter
-    }*/
+    }
 
 
     override fun onDestroyView() {

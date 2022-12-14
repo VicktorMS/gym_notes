@@ -385,9 +385,109 @@ class HomeSerieViewModel: ViewModel() {
        return repository.getExerciciosInSerieId(idSerie)
     }
 
+
+
+
+
+
+
+
+    /////////////////////////////////EX In Serie
+
+
+    fun observeExerciciosInSerieCollection() {
+
+        repository.getExerciciosInSerieId(selectedSerieId.toString())
+            .addSnapshotListener { snapshots, e ->
+                if (e != null) {
+                    Log.w(TAG, "listen:error", e)
+                    return@addSnapshotListener
+                }
+
+                val inputList = mutableListOf<ExercicioId>()
+
+
+                // Ver alterações entre instantâneos
+                // https://firebase.google.com/docs/firestore/query-data/listen?hl=pt&authuser=0#view_changes_between_snapshots
+                for (dc in snapshots!!.documentChanges) {
+                    when (dc.type) {
+
+                        // Documento adicionado
+                        DocumentChange.Type.ADDED -> {
+
+                            val exercicio = dc.document.toObject<Exercicio>()
+                            val id = dc.document.id
+                            val exercicioId = exercicioToExercicioId(exercicio, id)
+
+                            Log.i(TAG, "exercicioId: ${exercicioId}")
+
+                            //Colocar a função aqui, quando criar o exercio cria dentro da série
+
+                            inputList.add(exercicioId)
+
+                        }
+
+                        /*// Documento modificado
+                        DocumentChange.Type.MODIFIED -> {
+                            val exercicio = dc.document.toObject<Exercicio>()
+                            val id = dc.document.id
+                            val exercicioId = exercicioToExercicioId(exercicio, id)
+
+                            Log.i(TAG, "Modificacao - exercicioId: ${exercicioId}")
+                            alterList.add(exercicioId)
+                        }
+
+                        // Documento removido
+                        DocumentChange.Type.REMOVED -> {
+                            val id = dc.document.id
+//                            Log.i(TAG, "id removido: ${id}")
+                            removeList.add(dc.document.id)
+
+                        }*/
+                        else -> {}
+                    }
+                }
+
+                addListToExercicioInSerieId(inputList)
+
+            }
+    }
+
+    private fun addListToExercicioInSerieId(listaInput: MutableList<ExercicioId>) {
+        val listaAntiga = exerciciosIdInSerie.value
+        val listaNova = mutableListOf<ExercicioId>()
+
+        listaAntiga?.forEach {
+            listaNova.add(it)
+        }
+        listaInput.forEach {
+            listaNova.add(it)
+        }
+        setExerciciosIdInSerie(listaNova)
+
+    }
+
+
+    private val _exerciciosIdInSerie = MutableLiveData<List<ExercicioId>>()
+
+    val exerciciosIdInSerie : LiveData<List<ExercicioId>> = _exerciciosIdInSerie
+
+    fun setExerciciosIdInSerie(value: List<ExercicioId>) {
+        Log.i(TAG, "setExerciciosId" )
+        Log.i(TAG, "value = ${value}" )
+        _exerciciosIdInSerie.postValue(value)
+    }
+
+
+
+
     init {
         observeColectionSeries()
         observeExerciciosCollection()
+
+        if(selectedSerieId.value != null){
+            observeExerciciosInSerieCollection()
+        }
 
     }
 
