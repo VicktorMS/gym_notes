@@ -20,6 +20,10 @@ class HomeSerieViewModel: ViewModel() {
     val TAG = "HomeSerieViewModel"
     val repository = GymRepositoy.get()
 
+    fun getCurrentUserEmail(): String {
+        return repository.getCurrentUser()?.email ?: "Email não encontrado"
+    }
+
     fun logout() {
         repository.logout()
     }

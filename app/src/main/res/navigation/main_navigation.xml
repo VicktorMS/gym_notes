@@ -12,10 +12,11 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_cadastrarSerieFragment"
-            app:destination="@id/cadastrarSerieFragment" />
+            app:destination="@id/cadastrarSerieFragment"/>
+
         <action
             android:id="@+id/action_homeFragment_to_serieFragment"
-            app:destination="@id/serieFragment" />
+            app:destination="@id/serieFragment"/>
         <action
             android:id="@+id/action_homeFragment_to_userFragment"
             app:destination="@id/userFragment" />

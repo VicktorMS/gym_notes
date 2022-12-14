@@ -12,6 +12,7 @@ import br.edu.infnet.myapplication.data.models.Serie
 import br.edu.infnet.myapplication.databinding.FragmentCadastrarSerieBinding
 import br.edu.infnet.myapplication.ui.home.viewmodel.HomeSerieViewModel
 import br.edu.infnet.myapplication.utils.nav
+import br.edu.infnet.myapplication.utils.navUp
 
 
 class CadastrarSerieFragment : Fragment() {
@@ -50,7 +51,7 @@ class CadastrarSerieFragment : Fragment() {
         viewModel.createSerie(serie)
             .addOnSuccessListener { documentReference ->
                 Log.d(TAG, "Série cadastrada com sucesso: ${documentReference.id}")
-                nav(R.id.action_cadastrarSerieFragment_to_homeFragment)
+               navUp()
             }
             .addOnFailureListener {
                 Log.d(TAG, "Não foi possível cadastrar a Série")
