@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import br.edu.infnet.myapplication.R
 import br.edu.infnet.myapplication.databinding.FragmentCadastroBinding
 import br.edu.infnet.myapplication.ui.login.viewmodel.LoginViewModel
+import br.edu.infnet.myapplication.utils.toast
 
 
 class CadastroFragment : Fragment() {
@@ -45,13 +46,22 @@ class CadastroFragment : Fragment() {
            // val valEmail = inp.text.toString()
             val password = inputPassword.text.toString()
             val valPassword = inputConfirmPassword.text.toString()
-
-            if (((password == valPassword) && password.length > 5)){
-                signOn(email, password)
-            }
+            if (email != "")
+                if (password == valPassword){
+                    if(password.length > 5){
+                        signOn(email, password)
+                    }
+                    else{
+                        toast("Senha muito curta")
+                    }
+                }
+                else{
+                    toast("Senhas são diferentes")
+                }
             else{
-                Toast.makeText(requireContext(), "Informações Inválidas", Toast.LENGTH_SHORT).show()
+                toast("Email Inválido")
             }
+
         }
     }
 
@@ -62,7 +72,7 @@ class CadastroFragment : Fragment() {
                 findNavController().navigate(R.id.action_cadastroFragment_to_loginFragment)
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Falha no cadastro\n" +
+                Toast.makeText(requireContext(), "Falha no Cadastro\n" +
                         "${it.message}", Toast.LENGTH_SHORT).show()
             }
 

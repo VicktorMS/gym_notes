@@ -47,13 +47,13 @@ class LoginFragment : Fragment() {
             btnSignIn.setOnClickListener {
                 onSignInClick()
             }
-            btnSignOn.setOnClickListener {
-                onSignOnClick()
+            btnLoginSignOn.setOnClickListener {
+                navOnClick()
             }
         }
     }
 
-    private fun onSignOnClick() {
+    private fun navOnClick() {
         findNavController().navigate(R.id.action_loginFragment_to_cadastroFragment)
     }
 

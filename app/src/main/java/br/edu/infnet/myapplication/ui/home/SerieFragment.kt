@@ -44,9 +44,9 @@ class SerieFragment : Fragment() {
 
     private fun setupClickListeners() {
         binding.apply {
-            floatingActionButtonAddExercicio.setOnClickListener {
+          /*  floatingActionButtonAddExercicio.setOnClickListener {
                 nav(R.id.action_serieFragment_to_cadastrarExercicioFragment)
-            }
+            }*/
             imageViewEditSerie.setOnClickListener{
                 nav(R.id.action_serieFragment_to_cadastrarExercicioFragment)
             }

@@ -1,3 +1,4 @@
+/*
 package br.edu.infnet.myapplication.ui.home
 
 import android.os.Bundle
@@ -73,4 +74,4 @@ class CadastrarExercicioFragment : Fragment() {
 
 
 
-}
+}*/

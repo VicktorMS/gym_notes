@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
             <Button
-                android:id="@+id/btn_sign_on"
+                android:id="@+id/btnLogin_sign_on"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
