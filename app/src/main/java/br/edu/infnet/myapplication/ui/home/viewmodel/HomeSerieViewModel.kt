@@ -4,10 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import br.edu.infnet.myapplication.data.models.Exercicio
-import br.edu.infnet.myapplication.data.models.ExercicioId
-import br.edu.infnet.myapplication.data.models.Serie
-import br.edu.infnet.myapplication.data.models.SerieId
+import br.edu.infnet.myapplication.data.models.*
 import br.edu.infnet.myapplication.data.repository.GymRepositoy
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.CollectionReference
@@ -480,6 +477,11 @@ class HomeSerieViewModel: ViewModel() {
         Log.i(TAG, "setExerciciosId" )
         Log.i(TAG, "value = ${value}" )
         _exerciciosIdInSerie.postValue(value)
+    }
+
+
+    suspend fun fetchEnderecoFromCep(cep: String): Endereco {
+        return repository.fetchEnderecoFromCep(cep)
     }
 
 

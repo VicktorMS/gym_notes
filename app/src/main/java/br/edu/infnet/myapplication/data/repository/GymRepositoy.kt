@@ -1,9 +1,6 @@
 package br.edu.infnet.myapplication.data.repository
 
-import br.edu.infnet.myapplication.data.models.Exercicio
-import br.edu.infnet.myapplication.data.models.ExercicioId
-import br.edu.infnet.myapplication.data.models.ExercicioInSerie
-import br.edu.infnet.myapplication.data.models.Serie
+import br.edu.infnet.myapplication.data.models.*
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -14,8 +11,29 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.create
 
 class GymRepositoy private constructor(){
+
+
+    private val BASE_URL =
+        "https://viacep.com.br/"
+
+    val retrofitCep: Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(MoshiConverterFactory.create())
+        .build()
+
+    val cepApiDao: CepApiDao = retrofitCep.create()
+
+
+
+
+
+
+
     companion object {
         lateinit var auth: FirebaseAuth
 
@@ -41,6 +59,23 @@ class GymRepositoy private constructor(){
         fun get(): GymRepositoy {
             return INSTANCE
                 ?: throw IllegalStateException("GymRepositoy deve ser inicializado.")
+        }
+    }
+
+
+
+
+    suspend fun fetchEnderecoFromCep(cep: String): Endereco {
+        try {
+            return cepApiDao.getEncedereco(cep)
+        } catch (e: Exception) {
+            val naoEncontrado = "Não Encontrado"
+
+            return Endereco(
+                cep = cep,
+                cidade = naoEncontrado,
+                estado = naoEncontrado
+            )
         }
     }
 
