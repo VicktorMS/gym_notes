@@ -21,4 +21,4 @@ Implementações Futuras:
 
 ## Download
 
-Você pode baixar o aplicativo a partir da [Google Play Store](https://play.google.com/store/apps/details?id=br.com.gymnotes).
+Você pode baixar o aplicativo a partir da [Google Play Store](https://play.google.com/store/apps/details?id=br.edu.infnet.myapplication&pli=1).
